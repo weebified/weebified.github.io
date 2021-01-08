@@ -58,14 +58,24 @@ body{
     background: #fff;
     color: #000000;
     border-color: 1px solid #000000;
-
+    text-align: center;
+    font-size: 300%;
+    font-weight: bolder;
 }
 
 .wrapper .main_content .info{
     margin: 20px;
     line-height: 25px;
+    font-size: 150%;
+    text-align: center;
 }
 
 .wrapper .main_content .info div{
     margin-bottom: 20px;
+}
+
+.wrapper .main_content .news{
+    text-align: center;
+    font-weight: bold;
+    font-size: 150%;
 }

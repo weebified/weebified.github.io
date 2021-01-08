@@ -15,4 +15,53 @@ body{
 
 .wrapper{
     display: flex;
+    position: relative;
+}
+
+.wrapper .sidebar{
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background: #ff9d87;
+    padding: 20px 0;
+}
+
+.wrapper .sidebar h2{
+    color:#ffffff;
+    text-align: center;
+}
+
+.wrapper .sidebar ul li{
+    padding: 10px;
+}
+
+.wrapper .sidebar ul li a{
+    color: #ffdada;
+    display: block;
+}
+
+.wrapper .sidebar ul li:hover{
+    background: #ffa591;
+}
+
+.wrapper .sidebar ul li:hover a{
+    color: #fff;
+}
+
+.wrapper .main_content{
+    width: 200px;
+    margin-left: 200px;
+}
+
+.wrapper .main_content .header{
+    padding: 20px;
+    background: #fff;
+    color: #000000;
+    border-color: 1px solid #000000;
+
+}
+
+.wrapper .main_content .info{
+    margin: 20px;
+    
 }

@@ -1,2 +1,2 @@
-# weebified-s-texture-packs
+# weebitextures
 uwu

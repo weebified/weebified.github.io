@@ -8,3 +8,11 @@
     text-decoration: none;
     font-family: 'Quicksand', sans-serif;
 }
+
+body{
+    background: #ffffff;
+}
+
+.wrapper{
+    display: flex;
+}

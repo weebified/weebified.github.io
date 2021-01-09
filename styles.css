@@ -81,8 +81,3 @@ body{
     font-weight: bold;
     font-size: 150%;
 }
-
-.wrapper .main_content .news .shiina{
-    word-wrap: break-word;
-    width: 200px;
-}

@@ -51,6 +51,8 @@ body{
 .wrapper .main_content{
     width: 100%;
     margin-left: 200px;
+    max-width: 730px;
+    margin-left: 500px;
 }
 
 .wrapper .main_content .header{
@@ -78,4 +80,9 @@ body{
     text-align: center;
     font-weight: bold;
     font-size: 150%;
+}
+
+.wrapper .main_content .news .shiina{
+    word-wrap: break-word;
+    width: 200px;
 }

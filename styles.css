@@ -82,7 +82,7 @@ body{
     font-size: 150%;
 }
 
-.wrapper .main_content .download{
+.wrapper .main_content .download1{
     display: block;
     background: #ff9d87;
     color: #ffffff;
@@ -92,16 +92,43 @@ body{
     width: 30%;
     text-align: left;
     border-radius: 5px;
+    float: left;
 }
 
-.wrapper .main_content .download a{
+.wrapper .main_content .download1 a{
     color: #ffdada;
 }
 
-.wrapper .main_content .download a:hover{
+.wrapper .main_content .download1 a:hover{
     color: #ffffff;
 }
 
-.wrapper .main_content .download:hover{
+.wrapper .main_content .download1:hover{
+    background: #ffa591;
+}
+
+.wrapper .main_content .download2{
+    display: block;
+    background: #ff9d87;
+    color: #ffffff;
+    padding: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    width: 30%;
+    text-align: left;
+    border-radius: 5px;
+    float: left;
+    margin-left: 5%;
+}
+
+.wrapper .main_content .download2 a{
+    color: #ffdada;
+}
+
+.wrapper .main_content .download2 a:hover{
+    color: #ffffff;
+}
+
+.wrapper .main_content .download2:hover{
     background: #ffa591;
 }

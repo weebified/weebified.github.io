@@ -132,3 +132,13 @@ body{
 .wrapper .main_content .download2:hover{
     background: #ffa591;
 }
+
+.wrapper .main_content .info .phrase{
+    text-align: center;
+}
+
+.html{
+    background: rgb(212, 212, 212);
+    width: 100%;
+    height: 100px;
+}

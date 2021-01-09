@@ -20,7 +20,7 @@ body{
 
 .wrapper .sidebar{
     position: fixed;
-    width: 200px;
+    width: 14%;
     height: 100%;
     background: #ff9d87;
     padding: 20px 0;
@@ -51,6 +51,7 @@ body{
 .wrapper .main_content{
     width: 100%;
     margin-left: 33%;
+    margin-right: 33%;
     max-width: 730px;
 }
 

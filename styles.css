@@ -81,3 +81,27 @@ body{
     font-weight: bold;
     font-size: 150%;
 }
+
+.wrapper .main_content .download{
+    display: block;
+    background: #ff9d87;
+    color: #ffffff;
+    padding: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    width: 30%;
+    text-align: left;
+    border-radius: 5px;
+}
+
+.wrapper .main_content .download a{
+    color: #ffdada;
+}
+
+.wrapper .main_content .download a:hover{
+    color: #ffffff;
+}
+
+.wrapper .main_content .download:hover{
+    background: #ffa591;
+}

@@ -119,7 +119,7 @@ body{
     text-align: left;
     border-radius: 5px;
     float: left;
-    margin-left: 5%;
+    margin-left: 2%;
 }
 
 .wrapper .main_content .download2 a{
@@ -131,6 +131,33 @@ body{
 }
 
 .wrapper .main_content .download2:hover{
+    background: #ffa591;
+}
+
+.wrapper .main_content .download3{
+    display: block;
+    background: #ff9d87;
+    color: #ffffff;
+    padding: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    width: 30%;
+    text-align: left;
+    border-radius: 5px;
+    float: left;
+    margin-left: 2%;
+    font-size: 20px;
+}
+
+.wrapper .main_content .download3 a{
+    color: #ffdada;
+}
+
+.wrapper .main_content .download3 a:hover{
+    color: #ffffff;
+}
+
+.wrapper .main_content .download3:hover{
     background: #ffa591;
 }
 

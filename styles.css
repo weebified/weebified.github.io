@@ -83,6 +83,12 @@ body{
     font-size: 150%;
 }
 
+.wrapper .main_content .shiinabot{
+    background: #ffb4a3;
+    padding: 10px;
+    padding-bottom: 7px;
+}
+
 .wrapper .main_content .download1{
     display: block;
     background: #ff9d87;

@@ -199,6 +199,7 @@ body{
     color: rgb(255, 234, 234);
     font-weight: bold;
     display: block;
+    font-size: 100%;
 }
 
 .downloads a:hover {
@@ -281,5 +282,8 @@ footer{
     }
     .maincontent {
         display: block;
+    }
+    .downloads a{
+        font-size: 50%;
     }
 }

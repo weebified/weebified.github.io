@@ -3,171 +3,283 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    list-style: none;
-    text-decoration: none;
-    font-family: 'Quicksand', sans-serif;
 }
 
 body{
-    background: #ffffff;
+    background-color: #fff;
+    min-height: 100%;
 }
 
-.wrapper{
-    display: flex;
-    position: relative;
-}
-
-.wrapper .sidebar{
+.navcolor {
+    background-color: #ff9d87;
+    width: 100%;
     position: fixed;
-    width: 14%;
-    height: 100%;
-    background: #ff9d87;
-    padding: 20px 0;
 }
 
-.wrapper .sidebar h2{
-    color:#ffffff;
+.name {
+    font-size: 150%;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
     text-align: center;
-    font-size: 40px;
-}
-
-.wrapper .sidebar ul li{
-    padding: 10px;
-}
-
-.wrapper .sidebar ul li a{
-    color: #ffdada;
-    display: block;
-}
-
-.wrapper .sidebar ul li:hover{
-    background: #ffa591;
-}
-
-.wrapper .sidebar ul li:hover a{
+    margin-top: 0.8%;
+    margin-bottom: 1.5%;
     color: #fff;
 }
 
-.wrapper .main_content{
-    width: 100%;
-    margin-left: 33%;
-    margin-right: 33%;
-    max-width: 33%px;
+.navbuttons {
+    top: 100%;
+    display: none;
+    padding-bottom: 1%;
 }
 
-.wrapper .main_content .header{
-    padding: 20px;
-    background: #fff;
-    color: #000000;
-    border-color: 1px solid #000000;
-    text-align: center;
-    font-size: 300%;
-    font-weight: bolder;
+.navbuttons ul{
+    list-style-type: none;
 }
 
-.wrapper .main_content .info{
-    margin: 20px;
-    line-height: 25px;
-    font-size: 150%;
-    text-align: center;
+.navbuttons li{
+    margin-left: 2%;
 }
 
-.wrapper .main_content .info div{
-    margin-bottom: 20px;
-}
-
-.wrapper .main_content .news{
-    text-align: center;
+.navbuttons li a{
+    text-decoration: none;
+    font-family: 'Quicksand', sans-serif;
     font-weight: bold;
-    font-size: 150%;
+    color: rgb(255, 234, 234);
+    z-index: 999;
 }
 
-.wrapper .main_content .shiinabot{
-    background: #ffb4a3;
-    padding: 10px;
-    padding-bottom: 7px;
+.navbuttons li a:hover {
+    color: #fff;
+    z-index: 999;
 }
 
-.wrapper .main_content .download1{
+.checked:checked ~ .navbuttons {
     display: block;
-    background: #ff9d87;
-    color: #ffffff;
-    padding: 15px;
-    cursor: pointer;
-    text-decoration: none;
-    width: 30%;
-    text-align: left;
-    border-radius: 5px;
-    float: left;
 }
 
-.wrapper .main_content .download1 a{
-    color: #ffdada;
+.checked {
+    display: none;
 }
 
-.wrapper .main_content .download1 a:hover{
-    color: #ffffff;
-}
-
-.wrapper .main_content .download1:hover{
-    background: #ffa591;
-}
-
-.wrapper .main_content .download2{
+.checked-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    border: #fff;
     display: block;
-    background: #ff9d87;
-    color: #ffffff;
-    padding: 15px;
+    align-items: center;
     cursor: pointer;
-    text-decoration: none;
-    width: 30%;
-    text-align: left;
-    border-radius: 5px;
-    float: left;
-    margin-left: 2%;
 }
 
-.wrapper .main_content .download2 a{
-    color: #ffdada;
+.checked-label span,
+.checked-label span::before,
+.checked-label span::after {
+        display: block;
+        background: #fff;
+        height: 2px;
+        width: 2em;
+        border-radius: 2px;
+        position: relative;
+        margin-top: 65%;
 }
 
-.wrapper .main_content .download2 a:hover{
-    color: #ffffff;
+.checked-label span::before,
+.checked-label span::after {
+    content: '';
+    position: absolute;
 }
 
-.wrapper .main_content .download2:hover{
-    background: #ffa591;
+.checked-label span::before{
+    bottom: 7px;
 }
 
-.wrapper .main_content .download3{
-    display: block;
-    background: #ff9d87;
-    color: #ffffff;
-    padding: 15px;
-    cursor: pointer;
-    text-decoration: none;
-    width: 30%;
-    text-align: left;
-    border-radius: 5px;
-    float: left;
-    margin-left: 2%;
-    font-size: 20px;
+.checked-label span::after{
+    top: -14.6px;
+    padding-top: 0.5px;
 }
 
-.wrapper .main_content .download3 a{
-    color: #ffdada;
-}
-
-.wrapper .main_content .download3 a:hover{
-    color: #ffffff;
-}
-
-.wrapper .main_content .download3:hover{
-    background: #ffa591;
-}
-
-.wrapper .main_content .info .phrase{
+.shiinapack {
     text-align: center;
+    font-size: 160%;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    padding-top: 7%;
 }
 
+.shiinaspacknews{
+    width: 50%;
+    margin-left: 25%;
+}
+
+.shiinaspacknews a{
+    color: #000;
+    text-decoration: none;
+}
+
+.maincontent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 110%;
+    margin-top: 3%;
+}
+
+.tittle {
+    padding-top: 7%;
+    text-align: center;
+    font-size: 200%;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+}
+
+.desc {
+    text-align: center;
+    font-size: 100%;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.subdesc {
+    font-size: 30%;
+}
+
+.log {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 170%;
+    margin-left: 28.3%;
+    margin-top: 2%;
+}
+
+.logs{
+    font-family: monospace;
+    font-size: 120%;
+    margin-left: 27.5%;
+    margin-top: 2%;
+    border: 10px;
+    border-color: rgb(245, 245, 245);
+    background: rgb(245, 245, 245);
+    padding: 2%;
+    width: 40.3%;
+    border-radius: 5px;
+}
+
+.downloads {
+    display: absolute;
+    margin-left: 27.1%;
+    margin-right: 27.9%;
+    margin-top: 1%;
+}
+
+.downloads ul{
+    display: flex;
+    list-style: none;
+}
+
+.downloads li {
+    background: #ff9d87;
+    width: 50%;
+    padding: 5px;
+    border: 5px;
+    display: block;
+    border-radius: 5px;
+    text-align: center;
+    margin: 1%;
+}
+
+.downloads li:hover {
+    background: #fca794;
+}
+
+.downloads a{
+    text-decoration: none;
+    font-family: 'Quicksand', sans-serif;
+    color: rgb(255, 234, 234);
+    font-weight: bold;
+    display: block;
+}
+
+.downloads a:hover {
+    color: #fff;
+}
+
+.maincontent ul{
+    margin-top: 5%;
+}
+
+.maincontent li{
+    list-style-type: none;
+    margin-left: 5%;
+}
+
+.maincontent a{
+    font-size: 110%;
+    color: #000;
+    text-decoration: none;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+}
+
+.commandname {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 170%;
+    margin-left: 28.3%;
+    margin-bottom: -2%;
+}
+
+footer{
+    background: rgb(247, 247, 247);
+    padding: 1%;
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 5%;
+    font-size: 80%;
+    bottom: 0;
+}
+
+@media screen and (min-width: 650px) {
+    .checked-label{
+        display: none;
+    }
+
+    .name{
+        text-align: left;
+        padding-left:2% ;
+        margin-bottom: 1%;
+    }
+
+    .navbuttons{
+        display: block;
+        text-align: right;
+    }
+
+    .navcolor{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .navbuttons li{
+        margin-left: 10%;
+    }
+
+    .navbuttons ul{
+        display: flex;
+        margin-top: 1%;
+        margin-left: 65%;
+    }
+
+    .navbuttons li a{
+        font-size: 150%;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .tittle{
+        padding-top: 15%;
+    }
+    .maincontent {
+        display: block;
+    }
+}

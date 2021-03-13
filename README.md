@@ -1,2 +1,0 @@
-# weebitextures
-uwu

@@ -240,7 +240,7 @@ footer{
     bottom: 0;
 }
 
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 1200px) {
     .checked-label{
         display: none;
     }
@@ -276,7 +276,7 @@ footer{
     }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 1000px) {
     .tittle{
         padding-top: 15%;
     }

@@ -306,6 +306,11 @@ footer{
     color: #fff;
 }
 
+.return a{
+    text-decoration: none;
+    color: #fff;
+}
+
 .legal{
     padding: 1%;
     font-family: 'Quicksand', sans-serif;

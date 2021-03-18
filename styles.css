@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 
 *{
     margin: 0;
@@ -237,6 +238,79 @@ footer{
     font-family: 'Quicksand', sans-serif;
     margin-top: 5%;
     font-size: 80%;
+    bottom: 0;
+}
+
+.lmao{
+    text-align: center;
+    margin-top: 10%;
+    width: 50%;
+    margin-left: 25%;
+}
+
+.egg{
+    text-align: center;
+    width: 50%;
+    margin-left: 25%;
+    color: #000;
+    font-family: 'Satisfy', cursive;
+    font-size: 200%;
+    font-weight: bold;
+}
+
+.egg-text{
+    margin-top: 33.6%;
+    background-color: #fcba03;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    padding: 5.5%;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 150%;
+    text-align: justify;
+    color: #fff;
+}
+
+.egg-text img{
+    border-radius: 20px;
+}
+
+.egg-img{
+    margin-top: 48.6%;
+    background-color: #e3aa0b;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    padding: 5.5%;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 150%;
+}
+
+.tittle-egg{
+    margin-top: 10%;
+    font-size: 200%;
+    text-align: left;
+    font-family: serif;
+    font-weight: bold;
+    font-size: 300%;
+    background-color: #fcba03;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    clip-path: polygon(0 0, 0% 0, 100% 100%, 0 100%);
+    margin-top: 10%;
+    padding-top: 20%;
+    padding-left: 5%;
+    color: #fff;
+}
+
+.legal{
+    padding: 1%;
+    font-family: 'Quicksand', sans-serif;
+    margin-top: 5%;
+    font-size: 50%;
     bottom: 0;
 }
 

@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <link rel="shortcut icon" href="egg.png">
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <title>
+        eg
+    </title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function () {
+            $("#visible").click(function () {
+                $("#invisible").toggleClass("show");
+            });
+        });
+    </script>
+    <style>
+        .hide {
+            display: none;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="visible">
+        <div class="lmao"><img src="egg.png" width="50%"></div>
+    </div>
+    <div id="invisible" class="hide">
+        <div class="egg">the Eg</br>↓</div>
+        <div class="polygon"></div>
+        <div class="tittle-egg">
+            What is an eggdog?
+        </div>
+        <div class="egg-text">
+            An eggdog is a breed of dog that have the general shape of an egg, the structural apsects of them become also very interesting as an egg is made to withstand the pressure that a chicken sitting on it would exerce. This spcecie also has alot of interesting changes made to it's body.
+            <br><br><a href="https://www.youtube.com/watch?v=kYEg3LJnKTw"><img src="eggdog.jpeg" width="80%"></a>
+            <div class="legal">
+                Copyright © reserved weebified. All rights reserved
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

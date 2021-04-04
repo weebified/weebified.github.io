@@ -204,6 +204,46 @@ img{
     transition: 200ms;
 }
 
+@media screen and (max-width: 1200px) {
+    
+    .weebified{
+        margin-left: 2.5%;
+    }
+    
+    .dev{
+        margin-left: -19%;
+        margin-top: 3%;
+    }
+    
+    .ttl{
+        font-family: monospace;
+        margin-left: 55%;
+        margin-top: -35%;
+        font-weight: bold;
+    }
+
+    .commands{
+        margin-left: 55%;
+    }
+    
+    img{
+        display: block;
+    }
+    
+    .name{
+        display: block;
+        margin-top: -80%;
+    }
+    
+    .downloads{
+        margin-left: -105.5%;
+    }
+    
+    .downloads li{
+        margin-left: -3%;
+    }
+}
+
 @media screen and (max-width: 800px) {
 
     .tittle{

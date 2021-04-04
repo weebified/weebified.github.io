@@ -204,7 +204,7 @@ img{
     transition: 200ms;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 800px) {
 
     .tittle{
         font-size:800% ;

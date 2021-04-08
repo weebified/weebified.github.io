@@ -204,6 +204,11 @@ img{
     transition: 200ms;
 }
 
+.no{
+    color: #fff;
+    display: none;
+}
+
 @media (min-aspect-ratio: 1.43/1) {
     
     .weebified{

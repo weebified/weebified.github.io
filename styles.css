@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;400&display=swap');
 
+html {
+    overflow-y:scroll;
+}
+
 body{
     background: #fff;
 }
@@ -57,10 +61,10 @@ body{
 }
 
 .dev{
-    margin-left: -14.2%;
-    margin-top: 2%;
-    font-size: 73.5%;
-    font-weight: lighter;
+    margin-left: 7.3%;
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: bold;
+    animation: 900ms ease-in-out 0s 1 fadein;
 }
 
 .nav{
@@ -146,7 +150,7 @@ body{
 img{
     margin-top: -32%;
     margin-left: 7%;
-    background: rgb(248, 248, 248);
+    background: #fff;
     display: block;
 }
 
@@ -207,6 +211,18 @@ img{
 .no{
     display: none;
 }
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgb(172, 154, 154);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgb(107, 84, 84);
+  }
 
 @media (min-aspect-ratio: 1.43/1) {
     

@@ -27,20 +27,23 @@
     </head>
 
 <body>
+
+
     <div class="tittle">Hello.</div>
     <div class="intro">
         I am <div class="weebified">weebified</div>
-        <div class="dev">freelance developer</div>
     </div>
+
+    <div class="dev">freelance developer</div>
 
     <div class="nav">
         Projects
         <ul class="buttons">
             <li><a id="visible">Shiina-chan</a></li>
             <li><a id="visible1">Shiina's pack</a></li>
-            <li><a href="gaming.html" class="no">A bad idea</a></li>
         </ul>
     </div>
+
 
     <div id="invisible" class="hide">
         <div class="ttl">Shiina-chan</div>
@@ -120,6 +123,9 @@
                         <h3>Test command</h3>Tells you if the bot is online, syntax is "Shiina please
                         test"</br></br>cooldown: 10 seconds
                     </li></br>
+                    <li>
+                        <h3>"uwufy" command</h3>Makes a peice of text "uwu", syntax is "Shiina please uwufy [insert text]"</br></br>cooldown: 10 seconds
+                    </li></br>
                 </ul>
             </div>
         </div>
@@ -159,9 +165,15 @@
     <script>
         $(document).ready(function () {
             var palettes = ['rgb(255, 138, 95)', 'rgb(53, 176, 86)', 'rgb(97, 202, 212)', 'rgb(255, 215, 56)', 'rgb(255, 172, 56)'];
-            var randomPalette = palettes[Math.floor(Math.random() * 5)];
+            var Backgroundpalettes = ['#fff3ed', '#e4f0e7', '#daeced', '#fffae6', '#fff3e3'];
+
+            var num = Math.floor(Math.random() *5);
+
+            var randomPalette = palettes[num];
+            var randomBackground = Backgroundpalettes[num];
 
             var newcolor = randomPalette;
+            var newbackground = randomBackground;
 
             $('.weebified').css({
                 'color': newcolor,
@@ -177,6 +189,10 @@
 
             $('.downloads').css({
                 'color': newcolor,
+            });
+
+            $('img').css({
+                'background': newbackground,
             });
         });
     </script>

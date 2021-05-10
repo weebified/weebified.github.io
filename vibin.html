@@ -1,31 +1,67 @@
 <html>
+
 <head>
     <title>vibin'</title>
     <link rel='stylesheet' href='main.css'>
 </head>
+
 <body>
     <div class="vibe">
         <img src="vibin.gif" width="40%">
     </div>
-    <audio id="player" autoplay loop>
-        <source src="Tranquility.mp3" type="audio/mp3">
-        sad
-    </audio>
+
+    <div id="page" class="visible">click somewhere on the page</div>
+
+    <audio id="player" src="Tranquility.mp3" autoplay></audio>
+    <audio id="player1" src="alone in space.mp3" autoplay></audio>
+    <audio id="player2" src="lost time.mp3" autoplay></audio>
 
     <script>
         document.addEventListener('click', musicPlay);
         function musicPlay() {
-        document.getElementById('player').play();
-        document.removeEventListener('click', musicPlay);
-}
+            var music = Math.floor(Math.random() * 3);
+            var musics = [`player`, `player1`, `player2`];
+            document.getElementById(musics[music]).play();
+            var help = document.getElementById("page")
+            help.classList.remove("visible");
+            help.classList.add("hidden");
+            document.removeEventListener('click', musicPlay);
+        }
+
+        document.getElementById('player').addEventListener('ended', function(){
+            document.getElementById("player1").play();
+        })
+
+        document.getElementById('player1').addEventListener('ended', function(){
+            document.getElementById("player2").play();
+        })
+
+        document.getElementById('player2').addEventListener('ended', function(){
+            document.getElementById("player").play();
+        })
     </script>
 
     <style>
-        .vibe{
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+        .vibe {
             position: fixed;
             bottom: 0;
-            left: 43%;
+            left: 42%;
+        }
+
+        .visible{
+            display: block;
+            text-align: center;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 300%;
+            margin-top: 10%;
+        }
+
+        .hidden{
+            display: none;
         }
     </style>
 </body>
+
 </html>

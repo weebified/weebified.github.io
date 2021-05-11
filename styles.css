@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 
 html {
     overflow-y:scroll;
@@ -220,9 +221,26 @@ img{
     background: rgb(172, 154, 154);
   }
 
-  ::-webkit-scrollbar-thumb {
-    background: rgb(107, 84, 84);
-  }
+::-webkit-scrollbar-thumb {
+  background: rgb(107, 84, 84);
+}
+  .vibe {
+    position: fixed;
+    bottom: 0;
+    left: 42%;
+}
+
+.visiblevibe{
+    display: block;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 300%;
+    margin-top: 10%;
+}
+
+.hiddenvibe{
+    display: none;
+}
 
 @media (min-aspect-ratio: 1.43/1) {
     

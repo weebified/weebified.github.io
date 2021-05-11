@@ -2,15 +2,16 @@
 
 <head>
     <title>vibin'</title>
-    <link rel='stylesheet' href='main.css'>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="yu.png">
 </head>
 
 <body>
     <div class="vibe">
-        <img src="vibin.gif" width="40%" id="hidden" class="hidden">
+        <img src="vibin.gif" width="40%" id="hiddenvibe" class="hiddenvibe">
     </div>
 
-    <div id="page" class="visible">click somewhere on the page</div>
+    <div id="page" class="visiblevibe">click somewhere on the page</div>
 
     <audio id="player" src="Tranquility.mp3" autoplay></audio>
     <audio id="player1" src="alone in space.mp3" autoplay></audio>
@@ -23,10 +24,10 @@
             var musics = [`player`, `player1`, `player2`];
             document.getElementById(musics[music]).play();
             var help = document.getElementById("page")
-            help.classList.remove("visible");
-            help.classList.add("hidden");
-            var img = document.getElementById("hidden")
-            img.classList.remove("hidden");
+            help.classList.remove("visiblevibe");
+            help.classList.add("hiddenvibe");
+            var img = document.getElementById("hiddenvibe")
+            img.classList.remove("hiddenvibe");
             document.removeEventListener('click', musicPlay);
         }
 
@@ -42,28 +43,6 @@
             document.getElementById("player").play();
         })
     </script>
-
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
-
-        .vibe {
-            position: fixed;
-            bottom: 0;
-            left: 42%;
-        }
-
-        .visible{
-            display: block;
-            text-align: center;
-            font-family: 'Quicksand', sans-serif;
-            font-size: 300%;
-            margin-top: 10%;
-        }
-
-        .hidden{
-            display: none;
-        }
-    </style>
 </body>
 
 </html>

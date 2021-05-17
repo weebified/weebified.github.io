@@ -1,0 +1,51 @@
+<html>
+    <body>
+        <video src="IMG_3390.mp4" id="video" width="60%">
+            Your browser doesn't support video.
+        </video>
+        <div class="copyright">Copyright © Nicky Ly, All rights reserved</div>
+        <div id="button">Play</div>
+
+        <script>
+            var vid = document.querySelector('video');
+            vid.playbackRate = 15;
+
+            document.getElementById('button').addEventListener('click', function() {
+                if(vid.paused === false){
+                    vid.pause();
+                }else{
+                    vid.play();
+                }
+            })
+        </script>
+
+        <style>
+            #video{
+                margin: auto;
+                margin-top: 5%;
+                display: block;
+                transform: rotate(180deg);
+            }
+
+            .copyright{
+                bottom: 0;
+                position: absolute;
+                margin-bottom: 1%;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 70%;
+            }
+
+            #button{
+                text-align: center;
+                margin-top: 1%;
+                font-size: 300%;
+                font-family: Arial, Helvetica, sans-serif;
+                user-select: none;
+            }
+
+            #button:hover{
+                cursor: pointer;
+            }
+        </style>
+    </body>
+</html>

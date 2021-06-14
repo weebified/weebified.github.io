@@ -39,9 +39,8 @@ body{
     text-align: left;
     font-weight: bold;
     font-family: 'IBM Plex Mono', monospace;
-    font-size:900% ;
+    font-size:400% ;
     margin-left: 7%;
-    margin-top: 5%;
     animation: 800ms ease-in-out 0s 1 slideInFromTop;
 }
 
@@ -49,23 +48,15 @@ body{
     text-align: left;
     font-weight: bold;
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 150% ;
+    font-size: 100% ;
     margin-left: 7.3%;
     display: flex;
     animation: 900ms ease-in-out 0s 1 fadein;
+    margin-top: 7%;
 }
 
 .weebified{
-    margin-left: 1%;
     color: #fff;
-    text-decoration: underline;
-}
-
-.dev{
-    margin-left: 7.3%;
-    font-family: 'IBM Plex Mono', monospace;
-    font-weight: bold;
-    animation: 900ms ease-in-out 0s 1 fadein;
 }
 
 .nav{
@@ -99,7 +90,7 @@ body{
     font-size: 400%;
     font-family: 'IBM Plex Mono', monospace;
     margin-left: 45%;
-    margin-top: -35%;
+    margin-top: -25.45%;
     font-weight: bold;
 }
 
@@ -242,6 +233,39 @@ img{
     display: none;
 }
 
+#aboutme{
+    margin-left: 45%;
+    margin-top: -25.45%;
+}
+
+.ttl1{
+    font-size: 400%;
+    font-family: 'IBM Plex Mono', monospace;;
+    font-weight: bold;
+    color: #fff;
+    animation: 1100ms ease-in-out 0s 1 slideInFromTop;
+}
+
+.ttl2{
+    font-size: 400%;
+    font-family: 'IBM Plex Mono', monospace;;
+    font-weight: bold;
+    color: #fff;
+    animation: 1100ms ease-in-out 0s 1 slideInFromTop;
+    margin-top: 20%;
+}
+
+.desc1{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 120%;
+    width: 45%;
+    animation: 1100ms ease-in-out 0s 1 fadein;
+}
+
+.highlights{
+    color: #fff;
+}
+
 @media (min-aspect-ratio: 1.43/1) {
     
     .weebified{
@@ -283,6 +307,7 @@ img{
     
     .weebified{
         margin-left: 2.5%;
+        font-size: 50%;
     }
     
     .nav ul{
@@ -313,5 +338,9 @@ img{
     
     .downloads li{
         margin-left: -4.5%;
+    }
+
+    #aboutme{
+        font-size: 80%;
     }
 }

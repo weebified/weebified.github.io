@@ -1,0 +1,23 @@
+<html>
+
+<body>
+    <div id="heart"></div>
+    <style>
+        #heart{
+            font-size: 500%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+    <script>
+        onbeforeunload = function () { localStorage.x = 1 };
+
+        if (confirm("Do you consent to me crashing your chrome")) {
+            document.getElementById("heart").innerHTML = "<3"
+            setTimeout(function () {
+                while (1) location.reload(1)
+            }, 1000)
+        }
+    </script>
+</body>
+
+</html>

@@ -2,32 +2,40 @@ window.onload = (e) => {
     document.getElementById('visible').addEventListener('click', function () {
         var invisible = document.getElementById('invisible');
         var invisible1 = document.getElementById('invisible1');
-        var aboutme = document.getElementById('aboutme');
+        var invisible2 = document.getElementById('invisible2');
 
         if ($("#invisible").hasClass("hide")) {
             invisible.className = invisible.className.replace("hide", "show");
             invisible1.className = invisible1.className.replace("show", "hide");
+            invisible2.className = invisible2.className.replace("show", "hide");
         } else if ($("#invisible").hasClass("show")) {
             invisible.className = invisible.className.replace("show", "hide");
         }
     })
 
     document.getElementById('visible1').addEventListener('click', function () {
-        var invisible = document.getElementById('invisible');
-        var invisible1 = document.getElementById('invisible1');
-        var aboutme = document.getElementById('aboutme');
-
         if ($("#invisible1").hasClass("hide")) {
             invisible1.className = invisible1.className.replace("hide", "show");
             invisible.className = invisible.className.replace("show", "hide");
+            invisible2.className = invisible2.className.replace("show", "hide");
         } else if ($("#invisible1").hasClass("show")) {
             invisible1.className = invisible1.className.replace("show", "hide");
         }
     })
 
+    document.getElementById('visible2').addEventListener('click', function () {
+        if ($("#invisible2").hasClass("hide")) {
+            invisible2.className = invisible2.className.replace("hide", "show");
+            invisible1.className = invisible1.className.replace("show", "hide");
+            invisible.className = invisible.className.replace("show", "hide");
+        } else if ($("#invisible2").hasClass("show")) {
+            invisible2.className = invisible2.className.replace("show", "hide");
+        }
+    })
+
     document.querySelectorAll('.buttons').forEach(item => {
         item.addEventListener('click', function () {
-            if ($("#invisible1").hasClass("hide") && $("#invisible").hasClass("hide")) {
+            if ($("#invisible1").hasClass("hide") && $("#invisible").hasClass("hide") && $("#invisible2 ").hasClass("hide")) {
                 aboutme.className = aboutme.className.replace("hide", "show");
             } else {
                 aboutme.className = aboutme.className.replace("show", "hide");

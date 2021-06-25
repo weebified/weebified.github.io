@@ -363,7 +363,7 @@ img{
 
     .commands{
         margin-left: 7%;
-        font-size: 70%;
+        font-size: 80%;
     }
     
     img{
@@ -388,5 +388,9 @@ img{
 
     .intro{
         font-size: 200%
+    }
+
+    .desc{
+        font-size: 130%;
     }
 }

@@ -150,7 +150,7 @@ img{
     font-family: 'IBM Plex Mono', monospace;
     font-weight: bold;
     margin-left: 7%;
-    margin-top: -29%;
+    margin-top: -80%;
     text-align: center;
     width: 30%;
     display: block;
@@ -209,6 +209,28 @@ img{
     transition: 200ms;
 }
 
+.invite{
+    font-size: 100%;
+    font-family: 'IBM Plex Mono', monospace;
+    color:#fff;
+}
+
+.invite:hover{
+    cursor: pointer;
+}
+
+.inviteuwu{
+    font-size: 270%;
+    font-family: 'IBM Plex Mono', monospace;
+    color:#fff;
+    margin-top: 10%;
+    margin-left: 7.3%;
+}
+
+.inviteuwu:hover{
+    cursor: pointer;
+}
+
 .no{
     display: none;
 }
@@ -244,7 +266,7 @@ img{
 
 #aboutme{
     margin-left: 45%;
-    margin-top: -29%;
+    margin-top: -50%;
 }
 
 .ttl1{
@@ -277,11 +299,11 @@ img{
 
 @media only screen and (min-width: 1100px) {
     #aboutme{
-        margin-top: -31.2%;
+        margin-top: -33.2%;
     }
 
     .ttl{
-        margin-top: -29%;
+        margin-top: -33.2%;
     }
 }
 
@@ -293,7 +315,7 @@ img{
     
     .ttl{
         margin-left: 55%;
-        margin-top: -38.2%;
+        margin-top: -41.2%;
     }
 
     .commands{
@@ -323,7 +345,7 @@ img{
     }
 
     #aboutme{
-        margin-top: -38.2%;
+        margin-top: -41.2%;
         margin-left: 55%;
     }
 }
@@ -335,7 +357,11 @@ img{
     }
 
     #aboutme{
-        margin-top: -29%;
+        margin-top: -30.5%;
+    }
+
+    .ttl{
+        margin-top: -30.5%;
     }
 }
 
@@ -374,7 +400,17 @@ img{
     }
     
     .name{
-        display: none;
+        margin-top: 10%;
+        font-size: 300%;
+        width: 100%;
+        margin-left: 4%;
+    }
+
+    .name1{
+        margin-top: 10%;
+        font-size: 300%;
+        width: 100%;
+        margin-left: 2.5%;
     }
     
     .downloads{

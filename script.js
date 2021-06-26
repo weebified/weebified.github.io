@@ -3,9 +3,11 @@ window.onload = (e) => {
         var invisible = document.getElementById('invisible');
         var invisible1 = document.getElementById('invisible1');
         var invisible2 = document.getElementById('invisible2');
+        var invisible3 = document.getElementById('invisible3');
 
         if ($("#invisible").hasClass("hide")) {
             invisible.className = invisible.className.replace("hide", "show");
+            invisible3.className = invisible3.className.replace("show", "hide");
             invisible1.className = invisible1.className.replace("show", "hide");
             invisible2.className = invisible2.className.replace("show", "hide");
         } else if ($("#invisible").hasClass("show")) {
@@ -16,6 +18,7 @@ window.onload = (e) => {
     document.getElementById('visible1').addEventListener('click', function () {
         if ($("#invisible1").hasClass("hide")) {
             invisible1.className = invisible1.className.replace("hide", "show");
+            invisible3.className = invisible3.className.replace("show", "hide");
             invisible.className = invisible.className.replace("show", "hide");
             invisible2.className = invisible2.className.replace("show", "hide");
         } else if ($("#invisible1").hasClass("show")) {
@@ -26,6 +29,7 @@ window.onload = (e) => {
     document.getElementById('visible2').addEventListener('click', function () {
         if ($("#invisible2").hasClass("hide")) {
             invisible2.className = invisible2.className.replace("hide", "show");
+            invisible3.className = invisible3.className.replace("show", "hide");
             invisible1.className = invisible1.className.replace("show", "hide");
             invisible.className = invisible.className.replace("show", "hide");
         } else if ($("#invisible2").hasClass("show")) {
@@ -33,14 +37,37 @@ window.onload = (e) => {
         }
     })
 
+    document.getElementById('visible3').addEventListener('click', function () {
+        if ($("#invisible3").hasClass("hide")) {
+            invisible3.className = invisible3.className.replace("hide", "show");
+            invisible2.className = invisible2.className.replace("show", "hide");
+            invisible1.className = invisible1.className.replace("show", "hide");
+            invisible.className = invisible.className.replace("show", "hide");
+        } else if ($("#invisible3").hasClass("show")) {
+            invisible3.className = invisible3.className.replace("show", "hide");
+        }
+    })
+
     document.querySelectorAll('.buttons').forEach(item => {
         item.addEventListener('click', function () {
-            if ($("#invisible1").hasClass("hide") && $("#invisible").hasClass("hide") && $("#invisible2 ").hasClass("hide")) {
+            if ($("#invisible1").hasClass("hide") && $("#invisible").hasClass("hide") && $("#invisible2 ").hasClass("hide") && $("#invisible3 ").hasClass("hide")) {
                 aboutme.className = aboutme.className.replace("hide", "show");
             } else {
                 aboutme.className = aboutme.className.replace("show", "hide");
             }
         })
+    })
+
+    document.getElementById("shiina").addEventListener('click', function() {
+        window.open('https://discord.com/api/oauth2/authorize?client_id=772613198074740827&permissions=268617734&scope=bot')
+    })
+
+    document.getElementById("kuro").addEventListener('click', function() {
+        window.open('https://discord.com/api/oauth2/authorize?client_id=841801857507524669&permissions=149504&scope=bot')
+    })
+
+    document.getElementById("uwu").addEventListener('click', function() {
+        window.open('https://discord.com/api/oauth2/authorize?client_id=853791225240485909&permissions=264192&scope=bot')
     })
 
     var palettes = ['rgb(255, 138, 95)', 'rgb(53, 176, 86)', 'rgb(97, 202, 212)', 'rgb(255, 215, 56)', 'rgb(255, 172, 56)'];
@@ -84,6 +111,14 @@ window.onload = (e) => {
 
     $('img').css({
         'background': newbackground,
+    });
+
+    $('.invite').css({
+        'color': newcolor,
+    });
+
+    $('.inviteuwu').css({
+        'color': newcolor,
     });
 }
 

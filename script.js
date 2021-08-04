@@ -67,7 +67,7 @@ window.onload = (e) => {
     })
 
     document.getElementById("uwu").addEventListener('click', function() {
-        window.open('https://discord.com/api/oauth2/authorize?client_id=853791225240485909&permissions=264192&scope=bot')
+        window.open('https://discord.com/api/oauth2/authorize?client_id=853791225240485909&permissions=2147814400&scope=bot%20applications.commands')
     })
 
     var palettes = ['rgb(255, 138, 95)', 'rgb(53, 176, 86)', 'rgb(97, 202, 212)', 'rgb(255, 215, 56)', 'rgb(255, 172, 56)'];

@@ -1,56 +1,145 @@
 window.onload = (e) => {
-    document.getElementById('visible').addEventListener('click', function () {
-        var invisible = document.getElementById('invisible');
-        var invisible1 = document.getElementById('invisible1');
-        var invisible2 = document.getElementById('invisible2');
-        var invisible3 = document.getElementById('invisible3');
+    const loader =  document.querySelector(".loader");
+    loader.className += "hidden";
 
-        if ($("#invisible").hasClass("hide")) {
-            invisible.className = invisible.className.replace("hide", "show");
-            invisible3.className = invisible3.className.replace("show", "hide");
-            invisible1.className = invisible1.className.replace("show", "hide");
-            invisible2.className = invisible2.className.replace("show", "hide");
-        } else if ($("#invisible").hasClass("show")) {
-            invisible.className = invisible.className.replace("show", "hide");
+    //Theme toggle
+    let darkmode = localStorage.getItem('darkmode');
+    const enableDarkmode = () => {
+        document.querySelectorAll('*').forEach((e) => {
+            e.classList.add('darkmode')
+        });
+
+        localStorage.setItem('darkmode', 'enabled');
+        document.getElementById('theme-toggle').innerHTML = 'Toggle light mode';
+    }
+
+    const dissableDarkmode = () => {
+        document.querySelectorAll('*').forEach((e) => {
+            e.classList.remove('darkmode')
+        });
+
+        localStorage.setItem('darkmode', 'dissabled');
+        document.getElementById('theme-toggle').innerHTML = 'Toggle dark mode';
+    }
+
+    if(darkmode === 'enabled'){
+        enableDarkmode();
+    }
+
+    document.getElementById('theme-toggle').addEventListener('click', function  () {
+        darkmode = localStorage.getItem('darkmode');
+        if(darkmode !== 'enabled'){
+            enableDarkmode();
+        } else {
+            dissableDarkmode();
         }
     })
 
-    document.getElementById('visible1').addEventListener('click', function () {
-        if ($("#invisible1").hasClass("hide")) {
-            invisible1.className = invisible1.className.replace("hide", "show");
-            invisible3.className = invisible3.className.replace("show", "hide");
-            invisible.className = invisible.className.replace("show", "hide");
-            invisible2.className = invisible2.className.replace("show", "hide");
-        } else if ($("#invisible1").hasClass("show")) {
-            invisible1.className = invisible1.className.replace("show", "hide");
+    //greeting rng
+    
+    var greetings = [`Hello, I'm`, `Hey there, I'm`, `Hi there, I'm`];
+    var random_greetings = Math.floor(Math.random() * 3)
+
+    document.getElementById("greeting").innerHTML = greetings[random_greetings];
+
+    //Random color
+    var Backgroundpalettes = ['#fff3ed', '#e4f0e7', '#daeced', '#fffae6', '#fff3e3']
+    var palettes = ['rgb(255, 138, 95)', 'rgb(53, 176, 86)', 'rgb(97, 202, 212)', 'rgb(255, 215, 56)', 'rgb(255, 172, 56)'];
+
+    var randomTextPalette = ['#5c5757', '#565c57', '#5b6566', '#6b685c', '#756f66']; //random text palette, might use in futur idk
+
+    var num = Math.floor(Math.random() * 5);
+
+    var randomPalette = palettes[num];
+    var randomBackground = Backgroundpalettes[num];
+
+    $('.color').css({
+        'color': randomPalette,
+    });
+
+    $('.tittles').css({
+        'color': randomPalette,
+    });
+
+    $('.sub-tittles').css({
+        'color': randomPalette,
+    });
+
+    $('img').css({
+        'background': randomBackground,
+    });
+
+    var Shiina = document.getElementById('Shiina')
+    var Shiinas_pack = document.getElementById('Shiinas-pack')
+    var Kuro = document.getElementById('Kuro')
+    var uwu = document.getElementById('uwu')
+
+    var shiina_img = document.getElementById('shiina-img')
+    var kuro_img = document.getElementById('kuro-img')
+
+    //Navigation buttons
+
+    document.getElementById('Shiina-btn').addEventListener('click', function () {
+        if ($("#Shiina").hasClass("hide")) {
+            Shiina.className = Shiina.className.replace("hide", "show");
+            shiina_img.className = shiina_img.className.replace("hide", "show-img");
+            Shiinas_pack.className = Shiinas_pack.className.replace("show", "hide");
+            Kuro.className = Kuro.className.replace("show", "hide");
+            uwu.className = uwu.className.replace("show", "hide");
+            kuro_img.className = kuro_img.className.replace("show-img", "hide");
+        } else {
+            Shiina.className = Shiina.className.replace("show", "hide");
+            shiina_img.className = shiina_img.className.replace("show-img", "hide");
         }
     })
 
-    document.getElementById('visible2').addEventListener('click', function () {
-        if ($("#invisible2").hasClass("hide")) {
-            invisible2.className = invisible2.className.replace("hide", "show");
-            invisible3.className = invisible3.className.replace("show", "hide");
-            invisible1.className = invisible1.className.replace("show", "hide");
-            invisible.className = invisible.className.replace("show", "hide");
-        } else if ($("#invisible2").hasClass("show")) {
-            invisible2.className = invisible2.className.replace("show", "hide");
+    document.getElementById('Shiinas-pack-btn').addEventListener('click', function () {
+        if ($("#Shiinas-pack").hasClass("hide")) {
+            Shiinas_pack.className = Shiinas_pack.className.replace("hide", "show");
+            Shiina.className = Shiina.className.replace("show", "hide");
+            Kuro.className = Kuro.className.replace("show", "hide");
+            uwu.className = uwu.className.replace("show", "hide");
+            kuro_img.className = kuro_img.className.replace("show-img", "hide");
+            shiina_img.className = shiina_img.className.replace("show-img", "hide");
+        } else {
+            Shiinas_pack.className = Shiinas_pack.className.replace("show", "hide");
         }
     })
 
-    document.getElementById('visible3').addEventListener('click', function () {
-        if ($("#invisible3").hasClass("hide")) {
-            invisible3.className = invisible3.className.replace("hide", "show");
-            invisible2.className = invisible2.className.replace("show", "hide");
-            invisible1.className = invisible1.className.replace("show", "hide");
-            invisible.className = invisible.className.replace("show", "hide");
-        } else if ($("#invisible3").hasClass("show")) {
-            invisible3.className = invisible3.className.replace("show", "hide");
+    document.getElementById('Kuro-btn').addEventListener('click', function () {
+        if ($("#Kuro").hasClass("hide")) {
+            Kuro.className = Kuro.className.replace("hide", "show");
+            kuro_img.className = kuro_img.className.replace("hide", "show-img");
+            Shiinas_pack.className = Shiinas_pack.className.replace("show", "hide");
+            Shiina.className = Shiina.className.replace("show", "hide");
+            uwu.className = uwu.className.replace("show", "hide");
+            shiina_img.className = shiina_img.className.replace("show-img", "hide");
+        } else {
+            Kuro.className = Kuro.className.replace("show", "hide");
+            kuro_img.className = kuro_img.className.replace("show-img", "hide");
         }
     })
 
-    document.querySelectorAll('.buttons').forEach(item => {
+    document.getElementById('uwu-btn').addEventListener('click', function () {
+        if ($("#uwu").hasClass("hide")) {
+            uwu.className = uwu.className.replace("hide", "show");
+            Shiinas_pack.className = Shiinas_pack.className.replace("show", "hide");
+            Shiina.className = Shiina.className.replace("show", "hide");
+            Kuro.className = Kuro.className.replace("show", "hide");
+            kuro_img.className = kuro_img.className.replace("show-img", "hide");
+            shiina_img.className = shiina_img.className.replace("show-img", "hide");
+        } else {
+            uwu.className = uwu.className.replace("show", "hide");
+        }
+    })
+
+    //About me
+
+    var aboutme = document.getElementById('about-me-g')
+
+    document.querySelectorAll('.btn').forEach(item => {
         item.addEventListener('click', function () {
-            if ($("#invisible1").hasClass("hide") && $("#invisible").hasClass("hide") && $("#invisible2 ").hasClass("hide") && $("#invisible3 ").hasClass("hide")) {
+            if ($("#Shiina").hasClass("hide") && $("#Shiinas-pack").hasClass("hide") && $("#Kuro").hasClass("hide") && $("#uwu").hasClass("hide")) {
                 aboutme.className = aboutme.className.replace("hide", "show");
             } else {
                 aboutme.className = aboutme.className.replace("show", "hide");
@@ -58,68 +147,17 @@ window.onload = (e) => {
         })
     })
 
-    document.getElementById("shiina").addEventListener('click', function() {
+    //Invite buttons
+
+    document.getElementById("Shiina_inv").addEventListener('click', function() {
         window.open('https://discord.com/api/oauth2/authorize?client_id=772613198074740827&permissions=268617734&scope=bot')
     })
 
-    document.getElementById("kuro").addEventListener('click', function() {
+    document.getElementById("Kuro_inv").addEventListener('click', function() {
         window.open('https://discord.com/api/oauth2/authorize?client_id=841801857507524669&permissions=149504&scope=bot')
     })
 
-    document.getElementById("uwu").addEventListener('click', function() {
+    document.getElementById("uwu_inv").addEventListener('click', function() {
         window.open('https://discord.com/api/oauth2/authorize?client_id=853791225240485909&permissions=2147814400&scope=bot%20applications.commands')
     })
-
-    var palettes = ['rgb(255, 138, 95)', 'rgb(53, 176, 86)', 'rgb(97, 202, 212)', 'rgb(255, 215, 56)', 'rgb(255, 172, 56)'];
-    var Backgroundpalettes = ['#fff3ed', '#e4f0e7', '#daeced', '#fffae6', '#fff3e3'];
-
-    var num = Math.floor(Math.random() * 5);
-
-    var randomPalette = palettes[num];
-    var randomBackground = Backgroundpalettes[num];
-
-    var newcolor = randomPalette;
-    var newbackground = randomBackground;
-
-    $('.weebified').css({
-        'color': newcolor,
-    });
-
-    $('.nav').css({
-        'color': newcolor,
-    });
-
-    $('.ttl').css({
-        'color': newcolor,
-    });
-
-    $('.ttl1').css({
-        'color': newcolor,
-    });
-
-    $('.ttl2').css({
-        'color': newcolor,
-    });
-
-    $('.downloads').css({
-        'color': newcolor,
-    });
-
-    $('.highlights').css({
-        'color': newcolor,
-    });
-
-    $('img').css({
-        'background': newbackground,
-    });
-
-    $('.invite').css({
-        'color': newcolor,
-    });
-
-    $('.inviteuwu').css({
-        'color': newcolor,
-    });
 }
-
-    

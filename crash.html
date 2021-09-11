@@ -1,21 +1,51 @@
 <html>
 
 <body>
+    <!--        uwu pound me daddy~         -->
+
+    <!--            ⣿⠟⣽⣿⣿⣿⣿⣿⢣⠟⠋⡜⠄⢸⣿⣿⡟⣬⢁⠠⠁⣤⠄⢰⠄⠇⢻⢸
+                ⢏⣾⣿⣿⣿⠿⣟⢁⡴⡀⡜⣠⣶⢸⣿⣿⢃⡇⠂⢁⣶⣦⣅⠈⠇⠄⢸⢸
+                ⣹⣿⣿⣿⡗⣾⡟⡜⣵⠃⣴⣿⣿⢸⣿⣿⢸⠘⢰⣿⣿⣿⣿⡀⢱⠄⠨⢸
+                ⣿⣿⣿⣿⡇⣿⢁⣾⣿⣾⣿⣿⣿⣿⣸⣿⡎⠐⠒⠚⠛⠛⠿⢧⠄⠄⢠⣼
+                ⣿⣿⣿⣿⠃⠿⢸⡿⠭⠭⢽⣿⣿⣿⢂⣿⠃⣤⠄⠄⠄⠄⠄⠄⠄⠄⣿⡾
+                ⣼⠏⣿⡏⠄⠄⢠⣤⣶⣶⣾⣿⣿⣟⣾⣾⣼⣿⠒⠄⠄⠄⡠⣴⡄⢠⣿⣵
+                ⣳⠄⣿⠄⠄⢣⠸⣹⣿⡟⣻⣿⣿⣿⣿⣿⣿⡿⡻⡖⠦⢤⣔⣯⡅⣼⡿⣹
+                ⡿⣼⢸⠄⠄⣷⣷⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣕⡜⡌⡝⡸⠙⣼⠟⢱⠏
+                ⡇⣿⣧⡰⡄⣿⣿⣿⣿⡿⠿⠿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣋⣪⣥⢠⠏⠄
+                ⣧⢻⣿⣷⣧⢻⣿⣿⣿⡇⠄⢀⣀⣀⡙⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠂⠄⠄
+                ⢹⣼⣿⣿⣿⣧⡻⣿⣿⣇⣴⣿⣿⣿⣷⢸⣿⣿⣿⣿⣿⣿⣿⣿⣰⠄⠄⠄
+                ⣼⡟⡟⣿⢸⣿⣿⣝⢿⣿⣾⣿⣿⣿⢟⣾⣿⣿⣿⣿⣿⣿⣿⣿⠟⠄⡀⡀
+                ⣿⢰⣿⢹⢸⣿⣿⣿⣷⣝⢿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠛⠉⠄⠄⣸⢰⡇
+                ⣿⣾⣹⣏⢸⣿⣿⣿⣿⣿⣷⣍⡻⣛⣛⣛⡉⠁⠄⠄⠄⠄⠄⠄⢀⢇⡏⠄        -->
+
     <div id="heart"></div>
     <style>
-        #heart{
-            font-size: 500%;
+        #heart {
+            font-size: 300%;
             font-family: Arial, Helvetica, sans-serif;
         }
     </style>
     <script>
-        onbeforeunload = function () { localStorage.x = 1 };
-
-        if (confirm("Do you consent to me crashing your chrome")) {
-            document.getElementById("heart").innerHTML = "<3"
-            setTimeout(function () {
-                while (1) location.reload(1)
-            }, 1000)
+        window.onload = (e) => {
+            if (navigator.userAgent.indexOf("Chrome") != -1) {
+                onbeforeunload = function () { localStorage.x = 1 }
+                if (confirm("Are you okay with me crashing your browser?")) {
+                    document.getElementById("heart").innerHTML = "<3"
+                    setTimeout(function () {
+                        while (1) location.reload(1);
+                    }, 1000)
+                }
+            } else if (navigator.userAgent.indexOf("Firefox") != -1) {
+                if(confirm("Are you okay with me crashing your brower?\r\n\r\nIt will be a bit slow but you can open task manager to watch it slowly die")){
+                    for (var i = 69; i > 30; i = i + 69){ console.log(i); }
+                }
+            } else if (navigator.userAgent.indexOf("Safari") != -1) {
+                if (confirm("Are you okay with me crashing your browser?")) {
+                    window.onload = () => location.hash = "M" + "\u0001".repeat(2 ** 25) + "m";
+                }
+            } else {
+                alert("Ah sorry I have no idea what browser you're using, therefor I can't crash it.")
+            }
         }
     </script>
 </body>

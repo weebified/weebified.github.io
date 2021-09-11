@@ -2,20 +2,45 @@
 
 <head>
     <title>vibin'</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="yu.png">
+    <link rel="icon" href="imgs/yu.png">
 </head>
 
 <body>
     <div class="vibe">
-        <img src="vibin.gif" width="40%" id="hiddenvibe" class="hiddenvibe">
+        <img src="imgs/vibin.gif" id="hiddenvibe" class="hiddenvibe">
     </div>
 
     <div id="page" class="visiblevibe">click somewhere on the page</div>
 
-    <audio id="player" src="Tranquility.mp3" autoplay></audio>
-    <audio id="player1" src="alone in space.mp3" autoplay></audio>
-    <audio id="player2" src="lost time.mp3" autoplay></audio>
+    <audio id="player" src="audios/Tranquility.mp3" autoplay></audio>
+    <audio id="player1" src="audios/alone in space.mp3" autoplay></audio>
+    <audio id="player2" src="audios/lost time.mp3" autoplay></audio>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+        .vibe {
+            position: fixed;
+            bottom: 0;
+            left: 42%;
+        }
+
+        img{
+            width: 200px;
+        }
+
+        .visiblevibe {
+            display: block;
+            text-align: center;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 300%;
+            margin-top: 10%;
+        }
+
+        .hiddenvibe {
+            display: none;
+        }
+    </style>
 
     <script>
         document.addEventListener('click', musicPlay);
@@ -23,23 +48,20 @@
             var music = Math.floor(Math.random() * 3);
             var musics = [`player`, `player1`, `player2`];
             document.getElementById(musics[music]).play();
-            var help = document.getElementById("page")
-            help.classList.remove("visiblevibe");
-            help.classList.add("hiddenvibe");
-            var img = document.getElementById("hiddenvibe")
-            img.classList.remove("hiddenvibe");
+            document.getElementById("page").className = document.getElementById('page').className.replace('visiblevibe', 'hiddenvibe')
+            document.getElementById("hiddenvibe").classList.remove("hiddenvibe")
             document.removeEventListener('click', musicPlay);
         }
 
-        document.getElementById('player').addEventListener('ended', function(){
+        document.getElementById('player').addEventListener('ended', function () {
             document.getElementById("player1").play();
         })
 
-        document.getElementById('player1').addEventListener('ended', function(){
+        document.getElementById('player1').addEventListener('ended', function () {
             document.getElementById("player2").play();
         })
 
-        document.getElementById('player2').addEventListener('ended', function(){
+        document.getElementById('player2').addEventListener('ended', function () {
             document.getElementById("player").play();
         })
     </script>

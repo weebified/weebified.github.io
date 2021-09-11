@@ -8,7 +8,24 @@
 
 @keyframes fadeOut {
     30%{
-        color: #000;
+        color: rgb(0, 0, 0);
+    }
+    50%{
+        color: rgba(255, 255, 255, 0);
+    }
+    60%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        visibility: hidden;
+        color: rgba(255, 255, 255, 0);
+    }
+}
+
+@keyframes fadeOut-darkmode {
+    30%{
+        color: rgb(255, 255, 255);
     }
     50%{
         color: rgba(255, 255, 255, 0);
@@ -47,6 +64,11 @@
 .loader.darkmode{
     background-color: #20262b;
     color: #fff;
+}
+
+.loader.darkmode.hidden {
+    animation: fadeOut-darkmode 1000ms;
+    animation-fill-mode: forwards
 }
 
 .g1{

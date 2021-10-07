@@ -291,11 +291,7 @@
         display: block;
     }
 
-    #shiina-img{
-        margin-top: 600px;
-    }
-
-    #kuro-img{
+    #shiina-img, #kuro-img{
         margin-top: 275px;
     }
 

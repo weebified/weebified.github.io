@@ -224,10 +224,6 @@
   background: rgb(107, 84, 84);
 }
 
-img{
-    
-}
-
 @media only screen and (min-width: 768px) {
     #weebified{
         font-size: 300%;

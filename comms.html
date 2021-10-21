@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="comms.css">
+
+    <meta name="name" content="weebified.github.io/comms">
+    <meta name="description" content="Commissions for the bob SMP">
+    <meta name="author" content="weebified">
     </head>
 
 <body>
@@ -38,7 +42,7 @@
                 var url = "https://canary.discord.com/api/webhooks/899796551591952405/y2moOGQnUl7bhK7EkyM65H4ebKBwpqJdO08TQe8d9hJv2tHjD19GJb6r69d_tAPd6Qbs"
                 var content = "**Username: **" + document.getElementById("name").innerHTML + "\n**Commission Description:**\n" + document.getElementById("comm").innerHTML + "\n**Payment: **" + document.getElementById("payment").innerHTML + "\n\n||<@467020646069567498>||"
                 
-                if((content.length !== 79) && (content.length <= 2000)){
+                if((content.length !== 84) && (content.length <= 2000)){
                     $.post(url, { "content": content});
                     
                     document.getElementById("g2").className = document.getElementById("g2").className.replace('visible', 'invisible');

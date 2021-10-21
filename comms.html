@@ -12,9 +12,9 @@
     <meta name="author" content="weebified">
     </head>
 
-<body>
+<body oncontextmenu="return false">
     <div id="wrapper">
-        <div id="g2" class="visible">
+        <div id="g2">
             <div id="branding">weebi • comms</div>
             <h2 style="margin-bottom: 20px;">Commission details</h2>
             <h4>Username</h4>
@@ -39,16 +39,18 @@
     <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"> </script>
     <script> $(function () {
             $('#submit').click(function (e) {
+                var name = document.getElementById("name").innerHTML;
+                var comm = document.getElementById("comm").innerHTML;
+                var payment = document.getElementById("payment").innerHTML;
+
                 var url = "https://canary.discord.com/api/webhooks/899796551591952405/y2moOGQnUl7bhK7EkyM65H4ebKBwpqJdO08TQe8d9hJv2tHjD19GJb6r69d_tAPd6Qbs"
-                var content = "**Username: **" + document.getElementById("name").innerHTML + "\n**Commission Description:**\n" + document.getElementById("comm").innerHTML + "\n**Payment: **" + document.getElementById("payment").innerHTML + "\n\n||<@467020646069567498>||"
+                var content = "**Username: **" + name + "\n**Commission Description:**\n" + comm + "\n**Payment: **" + payment + "\n\n||<@467020646069567498>||"
                 
-                if((content.length !== 84) && (content.length <= 2000)){
+                if(content.length <= 2000 && !name.length == 0 && !comm.length == 0 && !payment.length == 0){
                     $.post(url, { "content": content});
                     
-                    document.getElementById("g2").className = document.getElementById("g2").className.replace('visible', 'invisible');
                     document.getElementById("ty").className = document.getElementById("ty").className.replace('invisible', 'visible');
-
-                    document.documentElement.style.setProperty('--themeColor', '#fff')
+                    var {url, content} = null
                 } else {
                     return
                 }

@@ -1,5 +1,5 @@
 window.onload = (e) => {
-    const loader =  document.querySelector(".loader");
+    const loader = document.querySelector(".loader");
     loader.className += "hidden";
 
     //Theme toggle
@@ -22,13 +22,13 @@ window.onload = (e) => {
         document.getElementById('theme-toggle').innerHTML = 'Toggle dark mode';
     }
 
-    if(darkmode === 'enabled'){
+    if (darkmode === 'enabled') {
         enableDarkmode();
     }
 
-    document.getElementById('theme-toggle').addEventListener('click', function  () {
+    document.getElementById('theme-toggle').addEventListener('click', function () {
         darkmode = localStorage.getItem('darkmode');
-        if(darkmode !== 'enabled'){
+        if (darkmode !== 'enabled') {
             enableDarkmode();
         } else {
             dissableDarkmode();
@@ -36,7 +36,7 @@ window.onload = (e) => {
     })
 
     //greeting rng
-    
+
     var greetings = [`Hello, I'm`, `Hey there, I'm`, `Hi there, I'm`];
     var random_greetings = Math.floor(Math.random() * 3)
 
@@ -181,15 +181,16 @@ window.onload = (e) => {
 
     //Invite buttons
 
-    document.getElementById("Shiina_inv").addEventListener('click', function() {
+    document.getElementById("Shiina_inv").addEventListener('click', function () {
         window.open('https://discord.com/api/oauth2/authorize?client_id=772613198074740827&permissions=268617734&scope=bot')
     })
 
-    document.getElementById("Kuro_inv").addEventListener('click', function() {
+    document.getElementById("Kuro_inv").addEventListener('click', function () {
         window.open('https://discord.com/api/oauth2/authorize?client_id=841801857507524669&permissions=149504&scope=bot')
     })
 
-    document.getElementById("uwu_inv").addEventListener('click', function() {
+    document.getElementById("uwu_inv").addEventListener('click', function () {
         window.open('https://discord.com/api/oauth2/authorize?client_id=853791225240485909&permissions=2147814400&scope=bot%20applications.commands')
     })
 }
+

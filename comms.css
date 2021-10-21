@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+:root {
+    --themeColor: rgb(131, 190, 158)
+}
+
+* {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--themeColor);
+}
+
+#wrapper {
+    display: grid;
+    place-items: center;
+    margin-top: 170px;
+}
+
+#branding {
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: var(--themeColor);
+    font-weight: bold;
+    background-color: #fff;
+}
+
+span {
+    display: inline-block;
+    min-width: 280px;
+    max-width: 280px;
+    min-height: 25px;
+    max-height: 80px;
+    overflow: auto;
+    border-radius: 20px;
+    border-width: 2px;
+    border-color: var(--themeColor);
+    border-style: solid;
+    padding-top: 5px;
+    padding-left: 10px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+span:focus{
+    outline-color: rgb(175, 221, 196);
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+#submit {
+    font-size: 120%;
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--themeColor);
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 4px;
+    margin-bottom: 10px;
+    margin-left: 3px;
+    width: 60%;
+    position: relative;
+    user-select: none;
+}
+
+#submit:hover{
+    transition-duration: 200ms;
+}
+
+#submit::after{
+    content: "";
+    position: absolute;
+    background-color: var(--themeColor);
+    height: 2.2px;
+    width: 0;
+    left: 1px;
+    bottom: 0;
+    transform-origin: left;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+}
+
+#submit:hover::after{
+    width: 97%;
+
+}
+
+#g2 {
+    border-radius: 15px;
+    padding: 1%;
+    background-color: #fff;
+}
+
+#g2 h4,
+h2 {
+    background-color: #fff;
+}
+
+#g2 h4{
+    margin-left: 3px;
+}
+
+.visible{
+    display: block;
+}
+
+.invisible{
+    display: none;
+}
+
+#ty{
+    margin-top: 100px;
+}
+
+#tycontainer{
+    display: grid;
+    place-items: center;
+}
+
+#tymsg{
+    text-align: center;
+    width: 20%;
+    font-size: 200%;
+    color: #ff977a;
+}
+
+@media only screen and (max-width: 768px) {
+    *{
+        background-color: #fff;
+    }
+
+    #branding {
+        font-size: 25px;
+    }   
+
+    #tymsg{
+        width: 100%;
+    }
+}

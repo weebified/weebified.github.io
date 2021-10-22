@@ -35,6 +35,8 @@ window.onload = (e) => {
         }
     })
 
+    var status = 0
+
     //greeting rng
 
     var greetings = [`Hello, I'm`, `Hey there, I'm`, `Hi there, I'm`];
@@ -46,28 +48,18 @@ window.onload = (e) => {
     var Backgroundpalettes = ['#fff3ed', '#e4f0e7', '#daeced', '#fffae6', '#fff3e3']
     var palettes = ['rgb(255, 138, 95)', 'rgb(53, 176, 86)', 'rgb(97, 202, 212)', 'rgb(255, 215, 56)', 'rgb(255, 172, 56)'];
 
-    var randomTextPalette = ['#5c5757', '#565c57', '#5b6566', '#6b685c', '#756f66']; //random text palette, might use in futur idk
+    var TextPalette = ['#5c5757', '#565c57', '#5b6566', '#6b685c', '#756f66'];
 
     var num = Math.floor(Math.random() * 5);
 
     var randomPalette = palettes[num];
     var randomBackground = Backgroundpalettes[num];
+    var randomTextPalette = TextPalette[num]
 
-    $('.color').css({
-        'color': randomPalette,
-    });
-
-    $('.tittles').css({
-        'color': randomPalette,
-    });
-
-    $('.sub-tittles').css({
-        'color': randomPalette,
-    });
-
-    $('img').css({
-        'background': randomBackground,
-    });
+    //update variable color
+    document.documentElement.style.setProperty('--color', randomPalette)
+    document.documentElement.style.setProperty('--backgroundColor', randomBackground)
+    document.documentElement.style.setProperty('--textColor', randomTextPalette)
 
     var Shiina = document.getElementById('Shiina')
     var Shiinas_pack = document.getElementById('Shiinas-pack')
@@ -165,12 +157,36 @@ window.onload = (e) => {
         }
     })
 
+    //Additional info
+
+    var info_txt_child = document.querySelectorAll(".info-txt-child");
+    var plus = document.querySelectorAll(".plus");
+
+    document.querySelectorAll(".additional-info").forEach((uwu) => {
+        uwu.addEventListener('click', function () {
+            if (status == 0) {
+                plus.forEach((owo) => {owo.style.setProperty('transform', 'rotate(45deg)')});
+                info_txt_child.forEach((e) => { e.className = e.className.replace("hide-info", "show-info") });
+                status = 1
+            } else {
+                plus.forEach((owo) => {owo.style.setProperty('transform', 'rotate(0)')});
+                info_txt_child.forEach((e) => { e.className = e.className.replace("show-info", "hide-info") });
+                status = 0
+            }
+        })
+    })
+
     //About me
 
     var aboutme = document.getElementById('about-me-g')
 
     document.querySelectorAll('.btn').forEach(item => {
         item.addEventListener('click', function () {
+            //reset additional info
+            plus.forEach((kekw) => {kekw.style.setProperty('transform', 'rotate(0)')});
+            info_txt_child.forEach((e) => { e.className = e.className.replace("show-info", "hide-info") });
+            status = 0
+
             if ($("#Shiina").hasClass("hide") && $("#Shiinas-pack").hasClass("hide") && $("#Kuro").hasClass("hide") && $("#uwu").hasClass("hide") && $("#scripts").hasClass("hide")) {
                 aboutme.className = aboutme.className.replace("hide", "show");
             } else {
@@ -178,6 +194,8 @@ window.onload = (e) => {
             }
         })
     })
+
+
 
     //Invite buttons
 

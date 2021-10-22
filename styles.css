@@ -40,6 +40,33 @@
     }
 }
 
+@keyframes fadeInFromTop {
+    from {
+        opacity: 0;
+        transform:translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform:translateY(0)}
+}
+
+@keyframes fadeOutFromTop {
+    from {
+        opacity: 1;
+        transform:translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform:translateY(-5px)}
+}
+
+:root{
+    --color: #fff;
+    --backgroundColor: #fff;
+    --textColor: #fff;
+    --dTextColor: #fff;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -55,6 +82,10 @@
     background-color: #20262b;
     transition: 150ms;
     color: #fff;
+}
+
+.color{
+    color: var(--color);
 }
 
 #proj ul li a:hover.darkmode{
@@ -112,10 +143,6 @@
     display: block;
 }
 
-#color{
-    color: #fff;
-}
-
 .g2{
     margin-top: 7%;
     margin-left: 7%;
@@ -130,11 +157,13 @@
 .tittles{
     font-size: 150%;
     font-weight: bold;
+    color: var(--color);
 }
 
 .sub-tittles{
     font-size: 150%;
     font-weight: bold;
+    color: var(--color);
 }
 
 .descs{
@@ -222,6 +251,73 @@
 
 ::-webkit-scrollbar-thumb {
   background: rgb(107, 84, 84);
+}
+
+.additional-info{
+    color: var(--color);
+    cursor: pointer;
+    user-select: none;
+    width: 220px;
+    display: flex;
+}
+
+.plus{
+    color: var(--color);
+    font-size: 130%;
+    margin-top: -5.5px;
+    background-color: rgba(255, 255, 255, 0);
+    transform-origin: 8px;
+    transition: 300ms;
+}
+
+img{
+    background: var(--backgroundColor);
+}
+
+img.darkmode{
+    background-color: var(--backgroundColor);
+}
+
+.show-info{
+    opacity: 1;
+    height: 1;
+    animation: 500ms ease-in-out 0s 1 fadeInFromTop;
+}
+
+.hide-info{
+    opacity: 0;
+    height: 0;
+    animation: 100ms ease-in-out 0s 1 fadeOutFromTop;
+}
+
+.link{
+    color: var(--textColor);
+    position: relative;
+}
+
+.link.darkmode{
+    color: var(--backgroundColor);
+}
+
+.link::after{
+    content: "";
+    background-color: var(--textColor);
+    height: 2px;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform-origin: left;
+    transition-duration: 200ms;
+    transition-timing-function: ease-in-out;
+}
+
+.link.darkmode::after{
+    background-color: var(--backgroundColor);
+}
+
+.link:hover::after{
+    width: 100%;
 }
 
 @media only screen and (min-width: 768px) {

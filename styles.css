@@ -47,15 +47,20 @@
     }
     to {
         opacity: 1;
-        transform:translateY(0)}
+        transform:translateY(0);
+    }
 }
 
 @keyframes fadeOutFromTop {
-    from {
+    0% {
         opacity: 1;
         transform:translateY(0);
+        height: 100%;
     }
-    to {
+    80%{
+        height: 0;
+    }
+    100% {
         opacity: 0;
         transform:translateY(-5px)}
 }

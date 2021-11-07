@@ -213,6 +213,7 @@ window.onload = (e) => {
         }, 100);
         document.querySelector(".ui-background").style.setProperty('animation', 'fadeOutFromBottom 100ms forwards');
         document.body.style.setProperty('position', 'unset');
+        document.body.style.setProperty('touch-action', 'auto');
         const scrollY = document.body.style.top;
         window.scrollTo(0, parseInt(scrollY || '0') * -1);
         document.querySelectorAll("#about-me, #about-me2").forEach((h) => {

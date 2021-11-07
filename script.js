@@ -215,14 +215,19 @@ window.onload = (e) => {
         document.body.style.setProperty('position', 'unset');
         const scrollY = document.body.style.top;
         window.scrollTo(0, parseInt(scrollY || '0') * -1);
+        document.querySelectorAll("#about-me, #about-me2").forEach((h) => {
+            h.style.setProperty('margin-left', '0');
+        })
     })
 
     document.getElementById('socials').addEventListener('click', function () {
         document.querySelector(".ui-background").style.setProperty('animation', 'fadeInFromTop 200ms ease-in-out');
         document.querySelector(".ui-background").style.setProperty('display', 'flex');
         document.body.style.setProperty('touch-action', 'none');
-        document.body.style.top = `-${window.scrollY}px`; 
-        document.body.style.setProperty('position', 'fixed');  
+        if($(aboutme).hasClass('hide')){
+            document.body.style.top = `-${window.scrollY}px`; 
+            document.body.style.setProperty('position', 'fixed');
+        }
     })
 
     //Invite buttons

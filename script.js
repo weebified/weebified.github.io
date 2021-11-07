@@ -165,13 +165,21 @@ window.onload = (e) => {
     document.querySelectorAll(".additional-info").forEach((uwu) => {
         uwu.addEventListener('click', function () {
             if (status == 0) {
-                plus.forEach((owo) => {owo.style.setProperty('transform', 'rotate(45deg)')});
-                info_txt_child.forEach((e) => { e.className = e.className.replace("hide-info", "show-info") });
-                status = 1
+                plus.forEach((owo) => { owo.style.setProperty('transform', 'rotate(45deg)') });
+                info_txt_child.forEach((e) => {
+                    e.className = e.className.replace("hide-info", "show-info")
+                    status = 1
+                    e.style.setProperty('display', 'block')
+                });
             } else {
-                plus.forEach((owo) => {owo.style.setProperty('transform', 'rotate(0)')});
-                info_txt_child.forEach((e) => { e.className = e.className.replace("show-info", "hide-info") });
-                status = 0
+                plus.forEach((owo) => { owo.style.setProperty('transform', 'rotate(0)') });
+                info_txt_child.forEach((e) => {
+                    e.className = e.className.replace("show-info", "hide-info")
+                    setTimeout(() => {
+                        e.style.setProperty('display', 'none')
+                        status = 0
+                    }, 100);
+                });
             }
         })
     })
@@ -183,8 +191,11 @@ window.onload = (e) => {
     document.querySelectorAll('.btn').forEach(item => {
         item.addEventListener('click', function () {
             //reset additional info
-            plus.forEach((kekw) => {kekw.style.setProperty('transform', 'rotate(0)')});
-            info_txt_child.forEach((e) => { e.className = e.className.replace("show-info", "hide-info") });
+            plus.forEach((kekw) => { kekw.style.setProperty('transform', 'rotate(0)') });
+            info_txt_child.forEach((e) => {
+                e.className = e.className.replace("show-info", "hide-info")
+                e.style.setProperty('display', 'none')
+            });
             status = 0
 
             if ($("#Shiina").hasClass("hide") && $("#Shiinas-pack").hasClass("hide") && $("#Kuro").hasClass("hide") && $("#uwu").hasClass("hide") && $("#scripts").hasClass("hide")) {
@@ -195,7 +206,24 @@ window.onload = (e) => {
         })
     })
 
+    //ui
+    document.getElementById('ui').addEventListener('click', function () {
+        setTimeout(() => {
+            document.querySelector(".ui-background").style.setProperty('display', 'none');
+        }, 100);
+        document.querySelector(".ui-background").style.setProperty('animation', 'fadeOutFromBottom 100ms forwards');
+        document.body.style.setProperty('position', 'unset');
+        const scrollY = document.body.style.top;
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    })
 
+    document.getElementById('socials').addEventListener('click', function () {
+        document.querySelector(".ui-background").style.setProperty('animation', 'fadeInFromTop 200ms ease-in-out');
+        document.querySelector(".ui-background").style.setProperty('display', 'flex');
+        document.body.style.setProperty('touch-action', 'none');
+        document.body.style.top = `-${window.scrollY}px`; 
+        document.body.style.setProperty('position', 'fixed');  
+    })
 
     //Invite buttons
 

@@ -10,7 +10,7 @@ window.onload = (e) => {
         });
 
         localStorage.setItem('darkmode', 'enabled');
-        document.getElementById('theme-toggle').innerHTML = 'Toggle light mode';
+        document.getElementById('theme-toggle').innerHTML = 'Lights on';
     }
 
     const dissableDarkmode = () => {
@@ -19,7 +19,7 @@ window.onload = (e) => {
         });
 
         localStorage.setItem('darkmode', 'dissabled');
-        document.getElementById('theme-toggle').innerHTML = 'Toggle dark mode';
+        document.getElementById('theme-toggle').innerHTML = 'Lights off';
     }
 
     if (darkmode === 'enabled') {

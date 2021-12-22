@@ -1,0 +1,173 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+:root{
+    --k_txt: #91b998;
+    --k_DarkBackground: #7da384;
+    --k_Dark: #20262b;
+    --k_background: #f3fff5;
+}
+
+::selection{
+    background-color: var(--k_txt);
+    color: var(--k_background);
+}
+
+html{
+    background-color: var(--k_Dark);
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--k_txt);
+}
+
+#container{
+    display: none;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--k_DarkBackground);
+    transition-duration: 800ms;
+    opacity: 0;
+}
+
+#msg{
+    position: fixed;
+    font-size: 300%;
+    font-family: 'Playfair Display', serif;
+    background-color: var(--k_background);
+    color: transparent;
+    width: 100px;
+    padding-bottom: 6px;
+    text-align: center;
+    transition-duration: 800ms;
+    opacity: 0;
+}
+
+#kana_content{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+#KanaTxtContainer{
+    text-align: center;
+    color: var(--k_background);
+    top: 0;
+    margin-top: 25vh;
+    height: 100vh;
+}
+
+#Tittle{
+    font-size: 300%;
+    font-weight: bold;
+}
+
+#subTittle{
+    letter-spacing: 3.8px;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+}
+
+#scrollDown{
+    margin-top: 60vh;
+    margin-bottom: 20vh;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.paragraph{
+    font-family: 'Roboto', sans-serif;
+    margin-top: 15px;
+    text-align: justify;
+    width: 600px;
+    font-weight: bold;
+}
+
+#kana_content h1{
+    font-size: 210%;
+    margin-top: 50px;
+}
+
+#KanaMainTxt{
+    display: grid;
+    justify-content: center;
+    padding-top: 50px;
+    background-color: var(--k_background);
+    color: var(--k_txt);
+    width: 100vw;
+    padding-bottom: 30px;
+}
+
+#imgP{
+    padding-left: 15px;
+}
+
+#imgContainer{
+    display: flex;
+    width: 600px;
+}
+
+#imgContainer img{
+    margin-top: 20px;
+}
+
+#copyright{
+    margin-top: 100px;
+    font-family: 'Roboto', sans-serif;
+}
+
+@media only screen and (max-width: 768px) {
+    #Tittle{
+        font-size: 200%;
+    }
+
+    #subTittle{
+        padding-left: 30px;
+        padding-right: 30px;
+        width: 90vw;
+        font-size: 80%;
+    }
+
+    #KanaMainTxt{
+        background-color: transparent;
+        color: var(--k_background);
+    }
+
+    img{
+        display: none;
+    }
+
+    .paragraph{
+        text-align: justify;
+        width: 90vw;
+        left: 0;
+        font-weight: bold;
+    }
+
+    #kana_content h1{
+        font-size: 170%;
+    }
+
+    #copyright{
+        margin-top: 100px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 70%;
+    }
+}

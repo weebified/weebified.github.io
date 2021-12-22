@@ -225,8 +225,8 @@ window.onload = (e) => {
         document.querySelector(".ui-background").style.setProperty('animation', 'fadeInFromTop 200ms ease-in-out');
         document.querySelector(".ui-background").style.setProperty('display', 'flex');
         document.body.style.setProperty('touch-action', 'none');
-        if($(aboutme).hasClass('hide')){
-            document.body.style.top = `-${window.scrollY}px`; 
+        if ($(aboutme).hasClass('hide')) {
+            document.body.style.top = `-${window.scrollY}px`;
             document.body.style.setProperty('position', 'fixed');
         }
     })
@@ -244,5 +244,70 @@ window.onload = (e) => {
     document.getElementById("uwu_inv").addEventListener('click', function () {
         window.open('https://discord.com/api/oauth2/authorize?client_id=853791225240485909&permissions=2147814400&scope=bot%20applications.commands')
     })
-}
 
+    //kana puzzle thing
+    
+    var kanaState = 0
+
+    document.getElementById("weebified").addEventListener('click', function () {
+        if(kanaState == 2){
+        document.getElementById('k_').style.setProperty('display', 'block')
+        kanaState = 0
+        } else {
+            document.getElementById('k_').style.setProperty('display', 'none')
+            kanaState += 1
+        }
+    })
+
+    document.getElementById("submit").addEventListener('click', function() {
+        var kanaIn = document.getElementById("kanaIn")
+
+        if (kanaIn.value === 'kana'){
+            localStorage.setItem("kanaPuzzleCheck", "enabled")
+        }
+    })
+
+    document.getElementById("kana-container").addEventListener('click', function () {
+        window.open('k/a/n/a/kana.html')
+    })
+
+    var kanaDisplay = document.getElementById('kana-container');
+    let kanaCheck = localStorage.getItem("kanaPuzzleCheck");
+
+    var kanaRNG = Math.floor(Math.random() * 30);
+
+    if (kanaRNG == 0 && kanaCheck === 'enabled') {
+        kanaDisplay.style.setProperty('display', 'flex')
+
+        let url = 'https://canary.discord.com/api/guilds/918300536753774633/widget.json'
+        let storagewebhook = 'https://canary.discord.com/api/webhooks/918303182772392047/ahUp26N9paHoOPGnOjs7jDm63wl6365YDDZbrVFTg_FapBncAZzkl06cARNFeDnnZRPU';
+
+        let imgURL = 'https://cdn.discordapp.com/avatars/918303182772392047/'
+
+        fetch(url)
+            .then(res => res.json())
+            .then(out => webhook = out)
+            .then(webhook => {
+                if (webhook.members[1].username === 'kana') {
+                    document.getElementById('kanaImg').src = webhook.members[1].avatar_url
+                    $.post(storagewebhook, { "content": 'kana?' });
+                } else {
+                    function fetchkana() {
+                        fetch(storagewebhook)
+                            .then(result => result.json())
+                            .then(output => document.getElementById('kanaImg').src = imgURL + output.avatar)
+                    }
+
+                    $.post(storagewebhook, { "content": 'kana?' });
+
+                    fetchkana()
+
+                    for (let i = 0; i < 5; i++) {
+                        setTimeout(function timer() {
+                            fetchkana()
+                        }, i * 500);
+                    }
+                }
+            });
+    }
+}

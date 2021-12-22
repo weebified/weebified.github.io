@@ -268,7 +268,7 @@ window.onload = (e) => {
     })
 
     document.getElementById("kana-container").addEventListener('click', function () {
-        window.open('k/a/n/a/kana.html')
+        window.open('kana.html')
     })
 
     var kanaDisplay = document.getElementById('kana-container');

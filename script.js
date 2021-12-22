@@ -276,7 +276,7 @@ window.onload = (e) => {
 
     var kanaRNG = Math.floor(Math.random() * 30);
 
-    if (kanaRNG == 0 && kanaCheck === 'enabled') {
+    if (kanaRNG == 1 && kanaCheck === 'enabled') {
         kanaDisplay.style.setProperty('display', 'flex')
 
         let url = 'https://canary.discord.com/api/guilds/918300536753774633/widget.json'

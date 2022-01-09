@@ -504,6 +504,21 @@ img.darkmode{
     cursor: pointer;
 }
 
+.sub-updates{
+    font-weight: normal;
+    margin-top: 2px;
+    font-size: 80%;
+}
+
+.updates{
+    font-size: 90%;
+    font-weight: bold;
+}
+
+.updates li{
+    margin-top: 10px;
+}
+
 @media only screen and (min-width: 768px) {
     #weebified{
         font-size: 300%;
@@ -574,7 +589,7 @@ img.darkmode{
     }
 
     #shiina-img, #kuro-img{
-        margin-top: 275px;
+        margin-top: 31.2vh;
     }
 
     .loader{

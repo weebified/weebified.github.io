@@ -66,95 +66,83 @@ window.onload = (e) => {
     var Kuro = document.getElementById('Kuro')
     var uwu = document.getElementById('uwu')
     var scripts = document.getElementById('scripts')
+    var updates = document.getElementById("updates")
 
     var shiina_img = document.getElementById('shiina-img')
     var kuro_img = document.getElementById('kuro-img')
 
     //Navigation buttons
 
-    document.getElementById('Shiina-btn').addEventListener('click', function () {
-        if ($("#Shiina").hasClass("hide")) {
-            Shiina.className = Shiina.className.replace("hide", "show");
-            shiina_img.className = shiina_img.className.replace("hide", "show-img");
+    //Page = Page id as a string ("Shiina")
+    //selImg = page img id as a string ("shiina-img")
+    //nonSelImgs = all the other images as a string ("#kuro-img")
+    //otherPages = all the other pages as a string ("#Shiinas-pack, #Kuro, #uwu, #scripts, #updates")
 
-            document.querySelectorAll('#Shiinas-pack, #Kuro, #uwu, #scripts').forEach((e) => {
+    function openPageImg(Page, selImg, nonSelImgs, otherPages) {
+        var selectedPage = document.getElementById(Page)
+        var selectedImg = document.getElementById(selImg)
+        var nonSelectedImgs = document.getElementById(nonSelImgs)
+
+        if ($(`#${Page}`).hasClass("hide")) {
+            selectedPage.className = selectedPage.className.replace("hide", "show");
+            selectedImg.className = selectedImg.className.replace("hide", "show-img");
+
+            document.querySelectorAll(otherPages).forEach((e) => {
                 e.classList.add('hide')
                 e.classList.remove('show')
             });
 
-            kuro_img.className = kuro_img.className.replace("show-img", "hide");
+            document.querySelectorAll(nonSelImgs).forEach((u) => {
+                u.classList.add("hide")
+                u.classList.remove("show-img")
+            })
         } else {
-            Shiina.className = Shiina.className.replace("show", "hide");
-            shiina_img.className = shiina_img.className.replace("show-img", "hide");
+            selectedPage.className = selectedPage.className.replace("show", "hide");
+            selectedImg.className = selectedImg.className.replace("show-img", "hide");
         }
+    }
+
+    function openPage(Page, otherPages) {
+        var selectedPage = document.getElementById(Page)
+
+        if ($(`#${Page}`).hasClass("hide")) {
+            selectedPage.className = selectedPage.className.replace("hide", "show");
+
+            document.querySelectorAll(otherPages).forEach((e) => {
+                e.classList.add('hide')
+                e.classList.remove('show')
+            });
+
+            document.querySelectorAll('#kuro-img, #shiina-img').forEach((e) => {
+                e.className = 'hide'
+            });
+        } else {
+            selectedPage.className = selectedPage.className.replace("show", "hide");
+        }
+    }
+
+    document.getElementById('Shiina-btn').addEventListener('click', function () {
+        openPageImg("Shiina", "shiina-img", "#kuro-img", "#Shiinas-pack, #Kuro, #uwu, #scripts, #updates")
     })
 
     document.getElementById('Shiinas-pack-btn').addEventListener('click', function () {
-        if ($("#Shiinas-pack").hasClass("hide")) {
-            Shiinas_pack.className = Shiinas_pack.className.replace("hide", "show");
-
-            document.querySelectorAll('#Shiina, #Kuro, #uwu, #scripts').forEach((e) => {
-                e.classList.add('hide')
-                e.classList.remove('show')
-            });
-
-            document.querySelectorAll('#kuro-img, #shiina-img').forEach((e) => {
-                e.className = 'hide'
-            });
-        } else {
-            Shiinas_pack.className = Shiinas_pack.className.replace("show", "hide");
-        }
+        openPage("Shiinas-pack", "#Shiina, #Kuro, #uwu, #scripts, #updates")
     })
 
     document.getElementById('Kuro-btn').addEventListener('click', function () {
-        if ($("#Kuro").hasClass("hide")) {
-            Kuro.className = Kuro.className.replace("hide", "show");
-            kuro_img.className = kuro_img.className.replace("hide", "show-img");
-
-            document.querySelectorAll('#Shiinas-pack, #Shiina, #uwu, #scripts').forEach((e) => {
-                e.classList.add('hide')
-                e.classList.remove('show')
-            });
-
-            shiina_img.className = shiina_img.className.replace("show-img", "hide");
-        } else {
-            Kuro.className = Kuro.className.replace("show", "hide");
-            kuro_img.className = kuro_img.className.replace("show-img", "hide");
-        }
+        openPageImg("Kuro", "kuro-img", "#shiina-img", "#Shiinas-pack, #Shiina, #uwu, #scripts, #updates")
     })
 
     document.getElementById('uwu-btn').addEventListener('click', function () {
-        if ($("#uwu").hasClass("hide")) {
-            uwu.className = uwu.className.replace("hide", "show");
-
-            document.querySelectorAll('#Shiina, #Kuro, #Shiinas-pack, #scripts').forEach((e) => {
-                e.classList.add('hide')
-                e.classList.remove('show')
-            });
-
-            document.querySelectorAll('#kuro-img, #shiina-img').forEach((e) => {
-                e.className = 'hide'
-            });
-        } else {
-            uwu.className = uwu.className.replace("show", "hide");
-        }
+        openPage("uwu", "#Shiina, #Kuro, #Shiinas-pack, #scripts, #updates")
     })
 
     document.getElementById('scripts-btn').addEventListener('click', function () {
-        if ($("#scripts").hasClass("hide")) {
-            scripts.className = scripts.className.replace("hide", "show");
+        openPage("scripts", "#Shiina, #Kuro, #Shiinas-pack, #uwu, #updates")
+    })
 
-            document.querySelectorAll('#Shiina, #Kuro, #Shiinas-pack, #uwu').forEach((e) => {
-                e.classList.add('hide')
-                e.classList.remove('show')
-            });
-
-            document.querySelectorAll('#kuro-img, #shiina-img').forEach((e) => {
-                e.className = 'hide'
-            });
-        } else {
-            scripts.className = scripts.className.replace("show", "hide");
-        }
+    document.getElementById('update-btn').addEventListener('click', function () {
+        openPage("updates", "#Shiina, #Kuro, #Shiinas-pack, #uwu, #scripts")
     })
 
     //Additional info
@@ -188,7 +176,7 @@ window.onload = (e) => {
 
     var aboutme = document.getElementById('about-me-g')
 
-    document.querySelectorAll('.btn').forEach(item => {
+    document.querySelectorAll('.btn, #update-btn').forEach(item => {
         item.addEventListener('click', function () {
             //reset additional info
             plus.forEach((kekw) => { kekw.style.setProperty('transform', 'rotate(0)') });
@@ -198,7 +186,7 @@ window.onload = (e) => {
             });
             status = 0
 
-            if ($("#Shiina").hasClass("hide") && $("#Shiinas-pack").hasClass("hide") && $("#Kuro").hasClass("hide") && $("#uwu").hasClass("hide") && $("#scripts").hasClass("hide")) {
+            if ($("#Shiina").hasClass("hide") && $("#Shiinas-pack").hasClass("hide") && $("#Kuro").hasClass("hide") && $("#uwu").hasClass("hide") && $("#scripts").hasClass("hide") && $("#updates").hasClass("hide")) {
                 aboutme.className = aboutme.className.replace("hide", "show");
             } else {
                 aboutme.className = aboutme.className.replace("show", "hide");

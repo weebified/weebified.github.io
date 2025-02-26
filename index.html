@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>weebified.works</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="icon" href="icon.png">
+    <script src='main.js'></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html{
+            background-color: #1b1818;
+        }
+        
+        #mainContainer{
+            height: 100vh;
+            width: 100vw;
+            display: grid;
+            place-items: center start;
+        }
+
+        #textContainer{
+            width: 97vw;
+            height: 20vh;
+            display: grid;
+            place-items: center start;
+            color: #fff8df;
+            font-family: "Playfair", serif;
+            padding-left: 3vw;
+            font-size: 170%;
+        }
+
+        p{
+            max-width: 600px;
+            width: 50vw;
+        }
+
+        li{
+            display: inline;
+            padding-right: 15px;
+            list-style: circle;
+            position: relative;
+            transition: 200ms;
+        }
+
+        a{
+            color: #fff8df;
+            text-decoration: none;
+        }
+
+        a:hover::after{
+            width: 100%;
+        }
+
+        a::after{
+            content: '';
+            position: absolute;
+            background-color: #fff8df;
+            mix-blend-mode: difference;
+            left: -5px;
+            bottom: 0;
+            height: 100%;
+            width: 0;
+            transition: 150ms;
+            transition-timing-function: ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="mainContainer">
+        <div id="textContainer">
+            <p>Hello, this website is currently under construction. In the meantime you can find me here</p>
+            <ul>
+                <li><a href="https://bsky.app/profile/weebified.works/">Bluesky</a></li>
+                <li><a href="https://youtube.com/@weebified/">YouTube</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

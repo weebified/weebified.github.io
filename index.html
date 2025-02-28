@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>weebified.works</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="icon" href="icon.png">
+
+    <link rel="icon" href="src/icon.png">
+
+    <title>weebified.works</title>
+    <meta name="name" content="weebified.works">
+
+    <meta name="description" content="weebified's works">
+    <meta name="author" content="weebified">
+    <meta name="keywords"
+        content="weebified, Shiina, shiina, Shiina's pack, shiina's pack, shiinas pack, Kuro, kuro, uwu, discord bot">
+
+    <meta property="og:tittle" content="weebified.works">
+    <meta property="og:url" content="https://weebified.works/">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="weebified's works">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
@@ -15,51 +29,50 @@
             padding: 0;
         }
 
-        html{
+        html {
             background-color: #1b1818;
         }
-        
-        #mainContainer{
-            height: 100vh;
+
+        #mainContainer {
+            height: 100vmin;
             width: 100vw;
             display: grid;
             place-items: center start;
+            color: #fff8df;
         }
 
-        #textContainer{
-            width: 97vw;
-            height: 20vh;
+        #textContainer {
+            height: 20vmin;
+            position: absolute;
             display: grid;
             place-items: center start;
-            color: #fff8df;
             font-family: "Playfair", serif;
             padding-left: 3vw;
-            font-size: 170%;
+            font-size: 200%;
+            mix-blend-mode: difference;
         }
 
-        p{
-            max-width: 600px;
-            width: 50vw;
+        #msg {
+            width: 700px;
         }
 
-        li{
+        #textContainer li {
             display: inline;
             padding-right: 15px;
-            list-style: circle;
             position: relative;
             transition: 200ms;
         }
 
-        a{
+        a {
             color: #fff8df;
             text-decoration: none;
         }
 
-        a:hover::after{
+        a:hover::after {
             width: 100%;
         }
 
-        a::after{
+        a::after {
             content: '';
             position: absolute;
             background-color: #fff8df;
@@ -71,12 +84,95 @@
             transition: 150ms;
             transition-timing-function: ease-in-out;
         }
+
+        #imgContainer {
+            width: 100vw;
+            display: grid;
+            justify-items: end;
+        }
+
+        #imgContainer ul {
+            display: flex;
+            list-style: none;
+        }
+
+        #imgContainer li {
+            width: 250px;
+            padding-right: 5vw;
+        }
+
+        @media only screen and (max-width: 1350px) {
+            #sketch {
+                display: none;
+            }
+        }
+
+        @media only screen and (max-width: 1000px) {
+            #study {
+                display: none;
+            }
+        }
+
+        @media only screen and (max-width: 780px) {
+            #cappie {
+                display: none;
+            }
+
+            #msg {
+                width: 70vw;
+                padding-bottom: 30px;
+            }
+
+            #textContainer {
+                font-size: 150%;
+                padding-left: 30px;
+            }
+
+            a:hover::after {
+                width: 0;
+            }
+        }
+
+        @media only screen and (max-width: 480px) {
+            #mainContainer {
+                height: 100vmax;
+                place-items: end center;
+            }
+
+            #textContainer {
+                position: unset;
+                padding-left: 40px;
+                font-size: 120%;
+                padding-bottom: 170px;
+            }
+
+            #msg {
+                width: calc(100% - 40px);
+            }
+        }
     </style>
 </head>
+
 <body>
     <div id="mainContainer">
+        <div id="imgContainer">
+            <ul>
+                <li id="sketch">
+                    <img src="src/sketch.jpg" width="100%">
+                    <p>SKETCH - 2024.12.11</p>
+                </li>
+                <li id="study">
+                    <img src="src/study.jpg" width="100%">
+                    <p>STUDY - 2025.01.02</p>
+                </li>
+                <li id="cappie">
+                    <img src="src/cappie.jpg" width="100%">
+                    <p>CAPPIE - 2025.01.11</p>
+                </li>
+            </ul>
+        </div>
         <div id="textContainer">
-            <p>Hello, this website is currently under construction. In the meantime you can find me here</p>
+            <p id="msg">Hello, this website is currently under construction. In the meantime you can find me here</p>
             <ul>
                 <li><a href="https://bsky.app/profile/weebified.works/">Bluesky</a></li>
                 <li><a href="https://youtube.com/@weebified/">YouTube</a></li>
@@ -84,4 +180,5 @@
         </div>
     </div>
 </body>
+
 </html>
